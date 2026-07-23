@@ -55,3 +55,10 @@ button{
 button:hover{
     background:#43a047;
 }
+#lap {
+    font-size: 32px;
+    font-weight: bold;
+    color: #2e7d32;
+    margin: 10px 0 25px 0;
+    text-align: center;
+}
