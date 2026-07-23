@@ -1,4 +1,5 @@
 let current = 0;
+let lap = 1;
 
 function showQuestion() {
 
@@ -56,18 +57,20 @@ speechSynthesis.speak(speech);
 }
 function nextQuestion() {
 
-current++;
+    current++;
 
-if (current >= questions.length) {
-current = 0;
+    if (current >= questions.length) {
+
+        current = 0;
+        lap++;
+
+        alert("🎉 " + (lap - 1) + "周目クリア！\n\n" + lap + "周目スタート！");
+
+    }
+
+    showQuestion();
+
 }
-
-showQuestion();
-
-}
-
 window.onload = function () {
-
-showQuestion();
-
+    showQuestion();
 };
