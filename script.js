@@ -2,7 +2,7 @@ let current = 0;
 let lap = 1;
 
 function showQuestion() {
-
+document.getElementById("lap").innerHTML = lap + "周目";
 const q = questions[current];
 
 document.getElementById("emoji").innerHTML = q.emoji;
