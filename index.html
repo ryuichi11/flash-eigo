@@ -4,151 +4,55 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>フラッシュ英語</title>
+<title>フラッシュ英語 文法</title>
 
-<style>
-
-body{
-    margin:0;
-    background:#f5f5f5;
-    font-family:Arial,sans-serif;
-    text-align:center;
-}
-
-header{
-    background:#4CAF50;
-    color:white;
-    padding:20px;
-    font-size:32px;
-    font-weight:bold;
-}
-
-.container{
-    margin:30px auto;
-    max-width:500px;
-    background:white;
-    padding:30px;
-    border-radius:20px;
-    box-shadow:0 0 20px rgba(0,0,0,0.15);
-}
-
-img{
-    width:220px;
-    max-width:90%;
-    border-radius:15px;
-}
-
-#timer{
-    font-size:70px;
-    color:#ff5722;
-    margin:20px;
-}
-
-#answer{
-    display:none;
-    font-size:40px;
-    color:#2196F3;
-    font-weight:bold;
-}
-
-button{
-    margin:10px;
-    padding:15px 30px;
-    font-size:22px;
-    border:none;
-    border-radius:12px;
-    cursor:pointer;
-    background:#4CAF50;
-    color:white;
-}
-
-button:hover{
-    background:#43a047;
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
 <header>
-
-🌟 フラッシュ英語 🌟
-
+<h1>📘 フラッシュ英語 文法</h1>
+<p>3秒で英文を完成させよう！</p>
 </header>
 
 <div class="container">
 
-<h2>レベル1</h2>
+<h2 id="level">レベル1</h2>
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Red_Apple.jpg">
-
-<div id="timer">3</div>
-
-<div id="answer">
-
-Apple
-
+<div id="emoji" style="font-size:80px;">
+🍎
 </div>
 
-<br>
+<h2 id="question">
+Apple
+</h2>
+
+<div id="timer">
+3
+</div>
+
+<div id="answer" style="display:none;">
+りんご
+</div>
 
 <button onclick="showAnswer()">
-
 答えを見る
-
 </button>
 
 <button onclick="speak()">
-
 🔊 発音
+</button>
 
+<button onclick="nextQuestion()">
+次へ
 </button>
 
 </div>
 
-<script>
-
-let count = 3;
-
-const timer = setInterval(function(){
-
-count--;
-
-if(count>=0){
-
-document.getElementById("timer").innerHTML=count;
-
-}
-
-if(count<0){
-
-clearInterval(timer);
-
-}
-
-},1000);
-
-function showAnswer(){
-
-document.getElementById("answer").style.display="block";
-
-}
-
-function speak(){
-
-const speech=new SpeechSynthesisUtterance("Apple");
-
-speech.lang="en-US";
-
-speech.rate=0.9;
-
-speechSynthesis.speak(speech);
-
-}
-
-</script>
+<script src="questions.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
